@@ -9,13 +9,24 @@ Exercises
 
 """
 
+import random
 from turtle import *
 from random import randrange
 from freegames import square, vector
+from random import randint
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+
+color=['orange','green','blue','pink','yellow']
+while True:
+    col1=random.choice(color)
+    col2=random.choice(color)
+    if (col1!=col2):
+        break
+    else:
+        continue
 
 def change(x, y):
     "Change snake direction."
