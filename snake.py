@@ -30,7 +30,25 @@ def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
-
+    
+    i=10
+    j=10
+    bools=(True,False)
+    xy=random.choice(bools)
+    f=randint(-1,1)
+    if xy:
+        i=i*f
+        j=0
+    else:
+        i=0
+        j=j*f
+    if (food.x + i <-200 or food.x + i >190):
+        i=i*(-1)
+    if (food.y + j <-200 or food.y + j >190):
+        j=j*(-1)
+    food.x = food.x +i
+    food.y = food.y +j
+    
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
